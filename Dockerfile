@@ -1,10 +1,11 @@
 # Build stage
-FROM alpine:3.21 AS build
+FROM node:20-alpine AS build
 # Upgrade Alpine packages
 RUN apk update && apk upgrade
 
 # Install Node.js and npm
 RUN apk add --no-cache nodejs npm bash python3 make g++
+RUN apk update && apk upgrade
 
 
 WORKDIR /app
