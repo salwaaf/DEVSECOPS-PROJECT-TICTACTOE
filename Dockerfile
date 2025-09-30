@@ -1,5 +1,8 @@
 # Build stage
-FROM node:20-alpine AS build
+FROM node:20.6.0-alpine3.23 AS build
+# Upgrade Alpine packages
+RUN apk update && apk upgrade
+
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
