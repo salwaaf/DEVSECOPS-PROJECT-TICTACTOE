@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20.6.0-alpine3.23 AS build
+FROM alpine:3.21 AS build
 # Upgrade Alpine packages
 RUN apk update && apk upgrade
 
